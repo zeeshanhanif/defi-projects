@@ -1,3 +1,7 @@
+# Truffle
+.secret
+.infuraKey
+
 # Logs
 logs
 *.log
