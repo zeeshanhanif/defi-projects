@@ -1,5 +1,5 @@
 {
-  "name": "ecr20token",
+  "name": "01_erc20_token",
   "version": "1.0.0",
   "description": "",
   "main": "truffle-config.js",
