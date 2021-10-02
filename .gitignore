@@ -1,6 +1,7 @@
 # Truffle
 .secret
 .infuraKey
+build
 
 # Logs
 logs
