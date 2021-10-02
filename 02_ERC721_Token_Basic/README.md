@@ -14,3 +14,7 @@ These two files are required to run this code
 # Deployed Conract Address -- (Rinkeby)
 1) Basic NFT - 0xf83cAb353ae5eb553cd13343d25Df7634B5B8977
 2) URI Based NFT  - 0x26b6329787F6327642f84c4483087a1a933aF7EF
+
+# Generate NFTs
+After deployment run following command to generate initial few NFTs
+```truffle exec scripts/generate-nfts.js --network rinkeby```
