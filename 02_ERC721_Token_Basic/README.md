@@ -1,4 +1,4 @@
-# Project 2 Create NFT
+# Project 2A Create NFT
 
 Create two files named
 1) .infuraKey (Add your infura key in it)
