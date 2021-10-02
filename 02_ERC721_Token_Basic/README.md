@@ -22,4 +22,4 @@ truffle exec scripts/generate-nfts.js --network rinkeby
 ```
 
 # Add NFT in your MetaMask
-![Add Token](./images/Metamask_addtoken.jpg)
+![Add Token](./images/Metamask_addtoken.JPG)
