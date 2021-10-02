@@ -17,4 +17,9 @@ These two files are required to run this code
 
 # Generate NFTs
 After deployment run following command to generate initial few NFTs
-```truffle exec scripts/generate-nfts.js --network rinkeby```
+```sh
+truffle exec scripts/generate-nfts.js --network rinkeby
+```
+
+# Add NFT in your MetaMask
+![Add Token](./images/Metamask_addtoken.jpg)
