@@ -36,11 +36,17 @@ module.exports = {
    */
 
   networks: {
+    
     ropsten: {
       provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/${infuraKey}`),
       network_id: 3,       // Ropsten's id
       gas: 5500000,        // Ropsten has a lower block limit than mainnet
       //networkCheckTimeout:3000000
+    },
+    rinkeby: {
+      provider: () => new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/${infuraKey}`),
+      network_id: 4,       // Rinkeby's id
+      gas: 5500000,        // Rinkeby has a lower block limit than mainnet
     },
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
