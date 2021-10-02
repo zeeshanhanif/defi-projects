@@ -7,30 +7,38 @@
 1) Demo NFT - 0x3F71b3Bf5419C151A131D36c523333bE5AbdD10e
 
 # Contract Verifcation on Etherscan
-1) Install verify pluging 
+1) Install verify plugin 
 ```sh
 npm install truffle-plugin-verify
 ```
 2) Get API key from Etherscan
 [Etherscan API Key](https://docs.etherscan.io/getting-started/viewing-api-usage-statistics)
-3) Add 'api_keys' key in truffle-config.js for Etherscan api key
+3) Add Etherscan API key in truffle-config.js
 ```js
-api_keys: {
+module.exports = {
+  /* ... rest of truffle-config */
+
+  api_keys: {
     etherscan: process.env.ETHERSCAN_API_KEY
   }
+}
 ```
-4) Add plugin key in truffle-config.js
+4) Add plugin in truffle-config.js
 ```js
-plugins: [
+module.exports = {
+  /* ... rest of truffle-config */
+
+  plugins: [
     'truffle-plugin-verify'
-]
+  ]
+}
+
 ```
 5) Run verify command
 ```sh
 truffle run verify DemoNFT --network rinkeby --license MIT
 ``` 
 6) After running above command you will receive below link and your contract will show as verified contract on etherscan
-
 https://rinkeby.etherscan.io/address/0x3F71b3Bf5419C151A131D36c523333bE5AbdD10e#code
 
 
