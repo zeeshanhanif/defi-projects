@@ -1,7 +1,8 @@
 import { task } from "hardhat/config";
 import "@nomiclabs/hardhat-waffle";
-import '@typechain/hardhat'
-import '@nomiclabs/hardhat-ethers'
+import '@typechain/hardhat';
+import '@nomiclabs/hardhat-ethers';
+import "@nomiclabs/hardhat-etherscan";
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -42,5 +43,10 @@ export default {
       url: `https://rinkeby.infura.io/v3/${INFURA_KEY}`,
       accounts: [`0x${RINKEBY_PRIVATE_KEY}`]
     }
+  },
+  etherscan: {
+    // Your API key for Etherscan
+    // Obtain one at https://etherscan.io/
+    apiKey: process.env.ETHERSCAN_API_KEY
   }
 };

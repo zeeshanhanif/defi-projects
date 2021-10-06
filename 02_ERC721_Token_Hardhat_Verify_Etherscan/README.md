@@ -2,7 +2,10 @@
 
 For TypeScript Configuration use this [link](https://hardhat.org/guides/typescript.html)
 
-[Interacting Programmatically with Contract](https://docs.openzeppelin.com/learn/deploying-and-interacting#interacting-programmatically)
+[Verify Etherscan with Hardhat](https://hardhat.org/plugins/nomiclabs-hardhat-etherscan.html)
+
+Get API key from Etherscan
+[Etherscan API Key](https://docs.etherscan.io/getting-started/viewing-api-usage-statistics)
 
 Below command will compile the contract and generates Typescript typings for contracts
 ```shell
@@ -23,6 +26,17 @@ Below command will generate few initial NFTs
 ```shell
 npx hardhat run dist/scripts/generate-nfts.js --network rinkeby
 ```
+
+Below command will Verify Contract
+```shell
+npx hardhat verify --network rinkeby DEPLOYED_CONTRACT_ADDRESS
+```
+
+## Deployed Conract Address -- (Rinkeby)
+VNFT - 0xCB55d1e54b10c42Fc1548AfE7DBca8c895DDa85C
+
+After running above command you will receive below link and your contract will show as verified contract on etherscan
+https://rinkeby.etherscan.io/address/0xCB55d1e54b10c42Fc1548AfE7DBca8c895DDa85C#code
 
 
 Try running some of the following tasks:
