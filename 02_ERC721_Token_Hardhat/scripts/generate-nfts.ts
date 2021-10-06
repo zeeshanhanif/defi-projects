@@ -3,7 +3,7 @@ import { NewNFT__factory } from "../typechain";
 
 async function main() {
     
-    const newNFTAddress = "<NFT Address after contract deployment>";
+    const newNFTAddress = "0x0E41629d2e65B05807C59D4722697Cc539617BB9";
     const NewNFT:NewNFT__factory = await ethers.getContractFactory("NewNFT");
     const newnft = await NewNFT.attach(newNFTAddress);
 
