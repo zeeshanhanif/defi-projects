@@ -1,4 +1,4 @@
-# Basic Sample Hardhat Project with TypeScript
+# Project 2 Implement ERC721 with Hardhat
 
 For TypeScript Configuration use this [link](https://hardhat.org/guides/typescript.html)
 
