@@ -1,6 +1,24 @@
-# Basic Sample Hardhat Project
+# Project 1 Create ERC20 Token
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+### Run and deploy locally
+Run following commands:
+```shell
+npx hardhat compile
+tsc
+npx hardhat test
+npx hardhat run ./dist/scripts/deploy.js
+```
+
+### Run and deploy locally on hardhat local node
+Run following commands:
+```shell
+npx hardhat compile
+tsc
+npx hardhat test
+npx hardhat node (Run this in separate terminal so you can see activity on node)
+npx hardhat run --network hardhat ./dist/scripts/deploy.js
+```
+
 
 Try running some of the following tasks:
 
