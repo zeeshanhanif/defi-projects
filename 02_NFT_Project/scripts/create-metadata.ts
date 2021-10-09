@@ -1,7 +1,5 @@
 
 import { existsSync, mkdirSync, writeFileSync } from 'fs';
-import { ethers, run } from 'hardhat';
-import { ShapeNFT, ShapeNFT__factory } from '../typechain';
 import { metadata_template, shapes } from './data';
 
 async function main() {
@@ -22,7 +20,7 @@ async function main() {
         shapeMetadata.attributes[1].value = shapes[i].color;
 
         console.log(shapeMetadata);
-        
+
         let filename = "metadata/"+shapes[i].imageName.toLowerCase().replace(/\s/g, '-').replace("png","json");
         console.log("filename = ",filename);
         console.log("==============");
