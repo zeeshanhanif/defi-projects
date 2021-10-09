@@ -1,18 +1,17 @@
 import { expect } from 'chai';
 import { ethers, waffle } from 'hardhat';
+import { ShapeNFT, ShapeNFT__factory } from '../typechain';
 
-describe("Greeter", function () {
-  it("Should return the new greeting once it's changed", async function () {
-    const Greeter = await ethers.getContractFactory("Greeter");
-    const greeter = await Greeter.deploy("Hello, world!");
-    await greeter.deployed();
-    expect(await greeter.greet()).to.equal("Hello, world!");
+describe("ShapeNFT", function () {
+  it("Should Owner's correct address", async function () {
 
-    const setGreetingTx = await greeter.setGreeting("Hola, mundo!");
+    const [owner] = await ethers.getSigners();
+    const ShapeNFT:ShapeNFT__factory = await ethers.getContractFactory("ShapeNFT");
+    const shapeNFT:ShapeNFT = await ShapeNFT.deploy();
+    await shapeNFT.deployed();
+    
+    console.log(await shapeNFT.owner());
 
-    // wait until the transaction is mined
-    await setGreetingTx.wait();
-
-    expect(await greeter.greet()).to.equal("Hola, mundo!");
+    expect(await shapeNFT.owner()).to.equal(await owner.getAddress());
   });
 });

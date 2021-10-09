@@ -6,6 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract ShapeNFT is ERC721URIStorage, Ownable {
 
     uint256 public tokenCounter;
+    uint256 public maxSupply;
 
     struct Shape{
         string name;
@@ -18,9 +19,9 @@ contract ShapeNFT is ERC721URIStorage, Ownable {
         tokenCounter = 0;
     }
 
-    function createNFT(address to, string memory name, string memory color, string memory tokenURI) public onlyOwner returns(uint256){
+    function createNFT(address to, string memory shapeName, string memory color, string memory tokenURI) public onlyOwner returns(uint256){
         uint256 tokenId = tokenCounter;
-        shapes.push(Shape(name,color));
+        shapes.push(Shape(shapeName,color));
         _safeMint(to,tokenId);
         _setTokenURI(tokenId,tokenURI);
         tokenCounter++;

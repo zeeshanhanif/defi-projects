@@ -4,6 +4,7 @@
 // When running the script with `npx hardhat run <script>` you'll find the Hardhat
 // Runtime Environment's members available in the global scope.
 import { ethers, run } from 'hardhat';
+import { ShapeNFT, ShapeNFT__factory } from '../typechain';
 
 async function main() {
   // Hardhat always runs the compile task when running scripts with its command
@@ -14,12 +15,12 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const Greeter = await ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello, Hardhat!");
+  const ShapeNFT:ShapeNFT__factory = await ethers.getContractFactory("ShapeNFT");
+  const shapeNFT:ShapeNFT = await ShapeNFT.deploy();
 
-  await greeter.deployed();
+  await shapeNFT.deployed();
 
-  console.log("Greeter deployed to:", greeter.address);
+  console.log("ShapeNFT deployed to:", shapeNFT.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
