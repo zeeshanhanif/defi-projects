@@ -29,12 +29,12 @@ npx hardhat run dist/scripts/deploy.js
 We will use [Pinata](https://www.pinata.cloud/) to upload images on IPFS
 
 ### 3) Upload your NFT images or Art work on Pinata
-![Pinata Home Screen](./images/01_pinata.jpg)
-![Click Upload Button](./images/02_pinata.jpg)
-![Upload Popup](./images/03_pinata.jpg)
-![Name and CID after uploading folder](./images/04_pinata.jpg)
-![List of Files inside folder on Pinata](./images/05_pinata.jpg)
-![Individual file on Pinata](./images/06_pinata.jpg)
+![Pinata Home Screen](./images/01_pinata.JPG)
+![Click Upload Button](./images/02_pinata.JPG)
+![Upload Popup](./images/03_pinata.JPG)
+![Name and CID after uploading folder](./images/04_pinata.JPG)
+![List of Files inside folder on Pinata](./images/05_pinata.JPG)
+![Individual file on Pinata](./images/06_pinata.JPG)
 
 
 
