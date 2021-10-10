@@ -79,7 +79,7 @@ npx hardhat run scripts/create-metadata.ts
 
 ### 8) Upload json files generated in Step 6
 Upload complete folder of metadata on Pinata.<br>
-Note again we will keep the patter and our file will be accessible with this URL ipfs://QmST7mVJVShNpsxZSHq86RRymshSj8PmSbQkAr4VHvFFrM/01_triangle_light_yellow.json
+Note: again we will keep the pattern and our file will be accessible with this URL ipfs://QmST7mVJVShNpsxZSHq86RRymshSj8PmSbQkAr4VHvFFrM/01_triangle_light_yellow.json
 
 ![Click Upload Button](./images/02_pinata.JPG)
 ![Upload Popup](./images/03_pinata.JPG)
