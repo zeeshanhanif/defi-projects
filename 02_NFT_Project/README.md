@@ -1,14 +1,8 @@
 # Project 2D Create NFT Project and Deploy on OpenSea
 
-Compile and Deploy
-```shell
-npx hardhat compile
-tsc
-npx hardhat run dist/scripts/deploy.js
-```
 
-## Upload Images or any Art on IPFS
-We will use [Pinata](https://www.pinata.cloud/) to upload images on IPFS
+
+We will follow below steps:
 
 1) Compile and Deploy NFT Contract
 2) Create Account on Pinata
