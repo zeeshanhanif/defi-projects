@@ -1,21 +1,27 @@
-# Basic Sample Hardhat Project with TypeScript
+# Project 2D Create NFT Project and Deploy on OpenSea
 
-For TypeScript Configuration use this [link](https://hardhat.org/guides/typescript.html)
-
-Below command will compile the contract and generates Typescript typings for contracts
+Compile and Deploy
 ```shell
 npx hardhat compile
-```
-
-Below command will run TypeScript compiler and convert all TypeScript files to JS and placed them in dist folder
-```shell
 tsc
+npx hardhat run dist/scripts/deploy.js
 ```
 
-Below command will deploy contracts on hardhat network
-```shell
-npx hardhat run dist/scripts/sample-script.js
-```
+## Upload Images or any Art on IPFS
+We will use [Pinata](https://www.pinata.cloud/) to upload images on IPFS
+
+1) Create Account on Pinata
+2) Upload Images on Pinata
+3) Update `data.ts` file for your data and image files
+4) Run create-metadata.ts, assuming you have only two properites, otherwise change in this file
+5) Upload json files generated in previous step
+6) Add deployed NFT address in `generate-nfts.ts` file
+7) Add address for initial owner for NFTs in `generate-nfts.ts` file
+8) Run generate-nfts.ts to initialize nfts with metadata generated
+9) Go to [opensea.io](https://testnets.opensea.io/get-listed/step-two) Testnet
+10) Provide your contract address
+11) Result will be something like [this](https://testnets.opensea.io/collection/shapenft)
+
 
 
 Try running some of the following tasks:
