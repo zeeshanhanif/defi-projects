@@ -106,3 +106,10 @@ For Mainnet go to this [link](https://opensea.io/get-listed/step-two)<br>
 To add your NFT on Opensea Testnet go to this [link](https://testnets.opensea.io/get-listed/step-two)<br>
 Select Rinkeby Network and Provide your contract address generated in `Step 1`<br>
 Once done you will see your NFT collection on Opnesea.io like [this](https://testnets.opensea.io/collection/shapenft)
+
+
+
+## Reference Links
+[How To Create NFTs With Solidity](https://betterprogramming.pub/how-to-create-nfts-with-solidity-4fa1398eb70a)
+[Build, Deploy, and Sell Your Own Dynamic NFT](https://blog.chain.link/build-deploy-and-sell-your-own-dynamic-nft/)
+[HOW TO WRITE & DEPLOY AN NFT](https://ethereum.org/en/developers/tutorials/how-to-write-and-deploy-an-nft/)
