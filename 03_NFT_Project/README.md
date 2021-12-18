@@ -110,6 +110,6 @@ Once done you will see your NFT collection on Opnesea.io like [this](https://tes
 
 
 ## Reference Links
-[How To Create NFTs With Solidity](https://betterprogramming.pub/how-to-create-nfts-with-solidity-4fa1398eb70a)
-[Build, Deploy, and Sell Your Own Dynamic NFT](https://blog.chain.link/build-deploy-and-sell-your-own-dynamic-nft/)
+[How To Create NFTs With Solidity](https://betterprogramming.pub/how-to-create-nfts-with-solidity-4fa1398eb70a)<br/>
+[Build, Deploy, and Sell Your Own Dynamic NFT](https://blog.chain.link/build-deploy-and-sell-your-own-dynamic-nft/)<br/>
 [HOW TO WRITE & DEPLOY AN NFT](https://ethereum.org/en/developers/tutorials/how-to-write-and-deploy-an-nft/)
