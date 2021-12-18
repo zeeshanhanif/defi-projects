@@ -1,4 +1,4 @@
-# Project 2D Create NFT Project and Deploy on OpenSea
+# Project 3 Create NFT Project and Deploy on OpenSea
 
 
 We will follow below steps:
