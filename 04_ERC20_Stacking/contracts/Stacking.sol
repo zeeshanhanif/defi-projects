@@ -1,10 +1,11 @@
 //SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 
 contract Stacking {
     
-
+    using SafeERC20 for IERC20;
     IERC20 public immutable stackingToken;
 
     constructor(address _stakingToken) {
@@ -14,7 +15,7 @@ contract Stacking {
 
 
     function stack(uint256 _amount) public {
-        stackingToken.transferFrom(msg.sender,address(this),_amount);
+        stackingToken.safeTransferFrom(msg.sender,address(this),_amount);
     }
 
 
