@@ -8,6 +8,15 @@ contract Stacking {
     using SafeERC20 for IERC20;
     IERC20 public immutable stackingToken;
 
+    struct Claim {
+        uint256 balance;
+        uint256 time;
+    }
+
+    mapping (address=> Claim) userClaims;
+
+
+
     constructor(address _stakingToken) {
         require(_stakingToken != address(0), "Zero address provided");
         stackingToken = IERC20(_stakingToken);
@@ -16,6 +25,10 @@ contract Stacking {
 
     function stack(uint256 _amount) public {
         stackingToken.safeTransferFrom(msg.sender,address(this),_amount);
+        userClaims[msg.sender] = Claim({
+            balance: _amount,
+            time: block.timestamp
+        });
     }
 
 
