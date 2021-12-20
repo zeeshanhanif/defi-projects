@@ -14,7 +14,10 @@ contract Stacking {
     }
 
     mapping (address=> Claim) userClaims;
+    uint256 public warmupPeriod;
 
+
+    event WarmupSet(uint256 warmup);
 
 
     constructor(address _stakingToken) {
@@ -29,6 +32,12 @@ contract Stacking {
             balance: _amount,
             time: block.timestamp
         });
+    }
+
+
+    function setWarmupLength(uint256 _warmupPeriod) public {
+        warmupPeriod = _warmupPeriod;
+        emit WarmupSet(_warmupPeriod);
     }
 
 
