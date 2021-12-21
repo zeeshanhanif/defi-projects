@@ -13,17 +13,30 @@ contract Stacking {
 
     struct UserStack {
         uint256 totalUserBalance;
+        uint256 profitClaim;
     }
+
+    struct Epoch {
+        uint256 length; 
+        uint256 number;
+        uint256 end;
+        uint256 distribute;
+    }
+
+    uint256 rewardRate;
+    Epoch epoch;
 
     mapping (address=>UserStack) usersStack;
 
-    constructor(address _stakingToken) {
+    constructor(address _stakingToken, uint256 _epochLength, uint256 _firstEpochNumber, uint256 _firstEpochTime) {
         require(_stakingToken != address(0), "Zero address provided");
         stackingToken = IERC20(_stakingToken);
+        epoch = Epoch(_epochLength, _firstEpochNumber, _firstEpochTime, 0);
     }
 
     function stack(uint256 _amount) public {
         require(_amount > 0, "Can Not Stake 0");
+        distributeReward();
         stackingToken.safeTransferFrom(msg.sender,address(this),_amount);
         UserStack memory _userStack = usersStack[msg.sender];
         _userStack.totalUserBalance += _amount;
@@ -33,7 +46,26 @@ contract Stacking {
     function unStack(uint256 _amount) public {
         UserStack memory _userStack = usersStack[msg.sender];
         require(_userStack.totalUserBalance <= _amount,"Not enough Balance");
+        distributeReward();
         stackingToken.safeTransfer(msg.sender, _amount);
         emit UnStacked(msg.sender, _amount);
+    }
+
+    function distributeReward() public {
+        if(epoch.end <= block.timestamp) {
+            epoch.end = epoch.end + epoch.length;
+            epoch.number++;
+
+            
+        }
+    }
+
+    funciton calculateReward() internal {
+
+    }
+
+
+    function setRewardRate(uint256 _rewardRate) public {
+        rewardRate = _rewardRate;
     }
 }
