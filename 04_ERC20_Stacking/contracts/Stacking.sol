@@ -8,38 +8,32 @@ contract Stacking {
     using SafeERC20 for IERC20;
     IERC20 public immutable stackingToken;
 
-    struct Claim {
-        uint256 balance;
-        uint256 time;
+    event Stacked(address account, uint256 amount);
+    event UnStacked(address account, uint256 amount);
+
+    struct UserStack {
+        uint256 totalUserBalance;
     }
 
-    mapping (address=> Claim) userClaims;
-    uint256 public warmupPeriod;
-
-
-    event WarmupSet(uint256 warmup);
-
+    mapping (address=>UserStack) usersStack;
 
     constructor(address _stakingToken) {
         require(_stakingToken != address(0), "Zero address provided");
         stackingToken = IERC20(_stakingToken);
     }
 
-
     function stack(uint256 _amount) public {
+        require(_amount > 0, "Can Not Stake 0");
         stackingToken.safeTransferFrom(msg.sender,address(this),_amount);
-        userClaims[msg.sender] = Claim({
-            balance: _amount,
-            time: block.timestamp
-        });
+        UserStack memory _userStack = usersStack[msg.sender];
+        _userStack.totalUserBalance += _amount;
+        emit Stacked(msg.sender, _amount);
     }
 
-
-    function setWarmupLength(uint256 _warmupPeriod) public {
-        warmupPeriod = _warmupPeriod;
-        emit WarmupSet(_warmupPeriod);
+    function unStack(uint256 _amount) public {
+        UserStack memory _userStack = usersStack[msg.sender];
+        require(_userStack.totalUserBalance <= _amount,"Not enough Balance");
+        stackingToken.safeTransfer(msg.sender, _amount);
+        emit UnStacked(msg.sender, _amount);
     }
-
-
-
 }
