@@ -55,12 +55,10 @@ contract Stacking {
         if(epoch.end <= block.timestamp) {
             epoch.end = epoch.end + epoch.length;
             epoch.number++;
-
-            
         }
     }
 
-    funciton calculateReward() internal {
+    function calculateReward() internal {
 
     }
 
