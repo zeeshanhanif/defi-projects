@@ -18,12 +18,18 @@ contract MultiTokenNFT  is ERC1155Supply {
     event TokenMinted(address account, uint256 tokenId, uint256 amount);
 
     // Typical URI "https://game.example/api/item/{id}.json"
-    constructor(string memory uri) ERC1155(uri){
+    constructor(string memory _uri) ERC1155(_uri){
     }
 
     modifier idExists(uint256 id){
         require(id >= 0 && id <= 5, "Id Not Exists");
         _;
+    }
+
+    function uri(uint256 tokenId) public view override returns (string memory) {
+        require(exists(tokenId), "Token does not exists");
+        string memory _tokenURI = super.uri(tokenId);
+        return bytes(_tokenURI).length > 0 ? string(abi.encodePacked(_tokenURI, tokenId,".json")) : "";
     }
 
     function mintToken(uint256 _id, uint256 _amount) public idExists(_id) {
