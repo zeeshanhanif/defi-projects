@@ -4,7 +4,7 @@ pragma solidity >=0.4.22 <0.9.0;
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Supply.sol";
 
-contract MultiTokenNFT  is ERC1155, ERC1155Supply {
+contract MultiTokenNFT  is ERC1155Supply {
 
     uint256 public constant TRIANGLE = 0;
     uint256 public constant PENTAGON = 1;
@@ -24,7 +24,7 @@ contract MultiTokenNFT  is ERC1155, ERC1155Supply {
         _;
     }
 
-    function mintToken(uint256 id, amount) public idExists {
+    function mintToken(uint256 id, uint256 amount) public idExists(id) {
         uint256 _tokenSupply = totalSupply(id); 
         //require(total)
     }
