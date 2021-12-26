@@ -1,25 +1,13 @@
-// We require the Hardhat Runtime Environment explicitly here. This is optional
-// but useful for running the script in a standalone fashion through `node <script>`.
-//
-// When running the script with `npx hardhat run <script>` you'll find the Hardhat
-// Runtime Environment's members available in the global scope.
 import { ethers, run } from 'hardhat';
+import { MultiTokenNFT, MultiTokenNFT__factory } from '../typechain';
 
 async function main() {
-  // Hardhat always runs the compile task when running scripts with its command
-  // line interface.
-  //
-  // If this script is run directly using `node` you may want to call compile
-  // manually to make sure everything is compiled
-  // await hre.run('compile');
 
-  // We get the contract to deploy
-  const Greeter = await ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello, Hardhat!");
+  const MultiTokenNFT:MultiTokenNFT__factory = await ethers.getContractFactory("MultiTokenNFT");
+  const multiTokenNFT:MultiTokenNFT = await MultiTokenNFT.deploy("https://game.example/api/item/{id}.json");
+  await multiTokenNFT.deployed();
 
-  await greeter.deployed();
-
-  console.log("Greeter deployed to:", greeter.address);
+  console.log("MultiTokenNFT deployed to:", multiTokenNFT.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
