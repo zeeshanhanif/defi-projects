@@ -15,6 +15,8 @@ contract MultiTokenNFT  is ERC1155Supply {
 
     uint256 maxSupplyEachToken = 10;
 
+    event TokenMinted(address account, uint256 tokenId, uint256 amount);
+
     // Typical URI "https://game.example/api/item/{id}.json"
     constructor(string memory uri) ERC1155(uri){
     }
@@ -24,8 +26,10 @@ contract MultiTokenNFT  is ERC1155Supply {
         _;
     }
 
-    function mintToken(uint256 id, uint256 amount) public idExists(id) {
-        uint256 _tokenSupply = totalSupply(id); 
-        //require(total)
+    function mintToken(uint256 _id, uint256 _amount) public idExists(_id) {
+        uint256 _tokenSupply = totalSupply(_id); 
+        require(_tokenSupply + _amount <= maxSupplyEachToken, "Not enough supply");
+        _mint(msg.sender, _id, _amount, "");
+        emit TokenMinted(msg.sender, _id, _amount);
     }
 }
