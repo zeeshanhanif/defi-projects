@@ -1,0 +1,9 @@
+node_modules
+.env
+metadata
+
+#Hardhat files
+cache
+artifacts
+typechain
+dist
