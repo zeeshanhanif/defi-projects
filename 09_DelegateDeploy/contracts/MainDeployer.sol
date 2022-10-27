@@ -38,7 +38,8 @@ contract MainDeployer is Ownable {
 
     function testDeploy() public {
         console.log("Hello in testDeploy");
-        DemoNFT demoNFT = new DemoNFT("ABC", "XYZ", msg.sender);
+        //DemoNFT demoNFT = new DemoNFT("ABC", "XYZ", msg.sender);
+        DemoNFT demoNFT = new DemoNFT("ABC", "XYZ");
         console.log("testDeploy msg.sender = ",address(demoNFT));
         emit ContractCreated(address(demoNFT), msg.sender);
         console.log("Hello in testDeploy after create new");
