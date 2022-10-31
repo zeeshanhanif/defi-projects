@@ -9,6 +9,12 @@ async function main() {
   const mainCreator:MainCreator = await MainCreator.deploy();
   await mainCreator.deployed();
   console.log("MainCreator deployed to:", mainCreator.address);
+  
+  const txt1 = await mainCreator.initialize();
+  console.log("txt1 = ",txt1);
+  const receipt = await txt1.wait();
+  console.log("txt1 receipt = ",receipt);
+
 
   const MainCreatorProxy:MainCreatorProxy__factory = await ethers.getContractFactory("MainCreatorProxy");
   const mainCreatorProxy:MainCreatorProxy = await MainCreatorProxy.deploy(mainCreator.address, "0x");
