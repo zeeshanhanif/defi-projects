@@ -1,0 +1,79 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0xEFfaBe46040bD4aa5C3F14dC868907Fa4822bFC1",
+    "txHash": "0x4eef4dc4945e881a76e0de544d5cbeea642abd6d9403df73a7e9176ab654d155"
+  },
+  "proxies": [
+    {
+      "address": "0x12e90370F0A116094995928B256832c85B5EEd88",
+      "txHash": "0xe9fbca0d343caa49c6398ec70f1a74e60cb300f833ae1bddf1b9fa3232438892",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xfb2469154AE96F90A5B163ae2b285B0d54ab9C67",
+      "txHash": "0xf0b1ce58773422109a43d5a48bb32e01fb31c80b14e9c072aa7bf43735c2d283",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "f74aa80bbb60900a66d1537e1c8b383e3f17b76988bf77d7618a2a56b60f924c": {
+      "address": "0x217aBE192832C93Ef11e16bF1ac94ddd9A0a005C",
+      "txHash": "0x9428604275a17173e5ebd738059412f32407998042f4bea7c50cf5059241dd10",
+      "layout": {
+        "solcVersion": "0.8.4",
+        "storage": [
+          {
+            "label": "value",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "MyContractV1",
+            "src": "contracts\\MyContractV1.sol:8"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "2fe4ab8a1564ba696516ebf69d948ad8db60cfcec65b194524e029f3f926002b": {
+      "address": "0x7A1ff6Eced166EfBEe1E48e00f974b488C1975A4",
+      "txHash": "0x15f11e97fe0c9b46e1c72c4b38d89e3345f9f9bff75b625d1e482b59084be023",
+      "layout": {
+        "solcVersion": "0.8.4",
+        "storage": [
+          {
+            "label": "value",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "MyContractV2",
+            "src": "contracts\\MyContractV2.sol:8"
+          },
+          {
+            "label": "name",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_string_storage",
+            "contract": "MyContractV2",
+            "src": "contracts\\MyContractV2.sol:9"
+          }
+        ],
+        "types": {
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    }
+  }
+}
