@@ -21,6 +21,7 @@
     "@types/node": "^16.10.2",
     "chai": "^4.3.4",
     "dotenv": "^10.0.0",
+    "erc721a-upgradeable": "^4.2.2",
     "ethereum-waffle": "^3.4.0",
     "ethers": "^5.4.7",
     "hardhat": "^2.6.4",
