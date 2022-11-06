@@ -32,7 +32,7 @@ Below command will Verify Contract
 npx hardhat verify --network rinkeby DEPLOYED_CONTRACT_ADDRESS
 ```
 
-## Deployed Conract Address -- (Rinkeby)
+## Deployed Conracst Address -- (Rinkeby)
 VNFT - 0xCB55d1e54b10c42Fc1548AfE7DBca8c895DDa85C
 
 After running above command you will receive below link and your contract will show as verified contract on etherscan
