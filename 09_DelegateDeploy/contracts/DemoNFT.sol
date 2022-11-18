@@ -15,9 +15,9 @@ contract DemoNFT is Ownable, ERC721 {
     uint256 price;
 
     event CreatedNew(address userAddress);
-    constructor(string memory _name, string memory _symbol, address userAddress) ERC721(_name,_symbol){
+    constructor(string memory _name, string memory _symbol /*, address userAddress*/) ERC721(_name,_symbol){
         console.log("DemoNFT constructor - msg.sender = ",msg.sender);
-        transferOwnership(userAddress);
+        //transferOwnership(userAddress);
         emit CreatedNew(msg.sender);
     }
 
