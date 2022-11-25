@@ -30,7 +30,35 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  * @type import('hardhat/config').HardhatUserConfig
  */
 export default {
-  solidity: "0.8.4",
+  solidity: {
+    compilers: [
+        {
+            version: "0.8.10",
+            settings: {
+                metadata: {
+                    bytecodeHash: "none",
+                },
+                optimizer: {
+                    enabled: true,
+                    runs: 1337,
+                },
+            },
+        },
+    ],
+    settings: {
+        outputSelection: {
+            "*": {
+                "*": ["storageLayout"],
+            },
+        },
+    },
+  },
+  paths: {
+    artifacts: "build/artifacts",
+    cache: "build/cache",
+    deploy: "src/deploy",
+    sources: "contracts",
+  },
   networks: {
     localhost: {
       url:' http://127.0.0.1:8545/'
