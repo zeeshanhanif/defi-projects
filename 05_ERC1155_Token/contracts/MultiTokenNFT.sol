@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Supply.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-contract MultiTokenNFT  is ERC1155Supply {
+contract MultiTokenNFT is ERC1155Supply {
     using Strings for uint256;
 
     uint256 public constant TRIANGLE = 0;
@@ -18,12 +18,14 @@ contract MultiTokenNFT  is ERC1155Supply {
     uint256 maxSupplyEachToken = 10;
 
     string private _name;
+    string private _symbol;
 
     event TokenMinted(address account, uint256 tokenId, uint256 amount);
 
     // Typical URI "https://game.example/api/item/{id}.json"
-    constructor(string memory name_, string memory _uri) ERC1155(_uri){
+    constructor(string memory name_, string memory symbol_, string memory _uri) ERC1155(_uri){
         _name = name_;
+        _symbol = symbol_;
     }
 
     modifier idExists(uint256 id){
@@ -38,14 +40,18 @@ contract MultiTokenNFT  is ERC1155Supply {
         return bytes(_tokenURI).length > 0 ? string(abi.encodePacked(_tokenURI, tokenId.toString(),".json")) : "";
     }
 
-    function mintToken(uint256 _id, uint256 _amount) public idExists(_id) {
+    function mintToken(address _to, uint256 _id, uint256 _amount) public idExists(_id) {
         uint256 _tokenSupply = totalSupply(_id); 
         require(_tokenSupply + _amount <= maxSupplyEachToken, "Not enough supply");
-        _mint(msg.sender, _id, _amount, "");
-        emit TokenMinted(msg.sender, _id, _amount);
+        _mint(_to, _id, _amount, "");
+        emit TokenMinted(_to, _id, _amount);
     }
 
     function name() public view returns (string memory) {
         return _name;
+    }
+
+    function symbol() public view virtual returns (string memory) {
+        return _symbol;
     }
 }
