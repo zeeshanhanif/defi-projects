@@ -9,7 +9,7 @@ async function main() {
   // This should be working but somehow its causing the problem and not loading, therefore using https uri
   //const multiTokenNFT:MultiTokenNFT = await MultiTokenNFT.deploy("ipfs://QmXsMLpKjznF3z1KsVm5tNs3E94vj4BFAyAHvD5RTWgQ1J/");
 
-  const multiTokenNFT:MultiTokenNFT = await MultiTokenNFT.deploy("MultiTokenNFT","https://gateway.pinata.cloud/ipfs/Qmd8grfncQt8oynkXTqyRohYDppsjpdagfY4MDQBr3aEdk/");
+  const multiTokenNFT:MultiTokenNFT = await MultiTokenNFT.deploy("MultiFrcNFT","MFT","https://gateway.pinata.cloud/ipfs/Qmd8grfncQt8oynkXTqyRohYDppsjpdagfY4MDQBr3aEdk/");
   await multiTokenNFT.deployed();
 
   console.log("MultiTokenNFT deployed to:", multiTokenNFT.address);
