@@ -9,6 +9,7 @@ import "./tasks/read-greeting";
 dotenv.config();
 
 const INFURA_KEY = process.env.INFURA_KEY;
+const ALCHEMY_KEY_MUMBAI = process.env.ALCHEMY_KEY_MUMBAI;
 
 // Replace this private key with your Ropsten account private key
 // To export your private key from Metamask, open Metamask and
@@ -50,6 +51,10 @@ export default {
     kovan: {
       url: `https://kovan.infura.io/v3/${INFURA_KEY}`,
       accounts: [`0x${PRIVATE_KEY}`]
-    }
+    },
+    matic: {
+      url: `https://polygon-mumbai.g.alchemy.com/v2/${ALCHEMY_KEY_MUMBAI}`,
+      accounts: [`0x${PRIVATE_KEY}`]
+    },
   }
 };
