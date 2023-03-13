@@ -5,7 +5,7 @@ import keccak256 from "keccak256";
 
 async function main() {
 
-    const [owner, addr1, addr2] = await ethers.getSigners();
+    const [owner, addr1, addr2,addr3] = await ethers.getSigners();
 
     const {proofs, root} = await generateMerkleTree();
 
@@ -17,6 +17,12 @@ async function main() {
 
     // Will add this address in address.json so that other scripts can use this address
     console.log("SampleMerkleRoot deployed to:", sampleMerkleRoot.address);
+
+
+
+    const txt1 = await sampleMerkleRoot.connect(addr3).mint(1,proofs[2]);
+    console.log("sampleMerkleRoot.mint txt.hash = ",txt1.hash);
+    const txtReceipt = await txt1.wait();
 }
 
 
