@@ -23,7 +23,7 @@ contract SampleMerkleRoot is Ownable, ERC721 {
 
     mapping(address => uint) public tokensMinted;
 
-        constructor(bytes32 merkleRoot_) ERC721("Test Mint", "TEST") {
+    constructor(bytes32 merkleRoot_) ERC721("Test Mint", "TEST") {
         merkleRoot = merkleRoot_;
     }
 
