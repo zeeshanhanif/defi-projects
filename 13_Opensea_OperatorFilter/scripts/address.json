@@ -1,0 +1,14 @@
+{
+    "localhost": {
+        "sampleFilterNFT":"0x5FbDB2315678afecb367f032d93F642f64180aa3",
+        "mockOperator": ""
+    },
+    "mumbai": {
+        "sampleFilterNFT":"0x5171d628C996B156451E9967FF73F0b6fC5d068b",
+        "mockOperator": "0xF441Bb44380fA7eDf25f68afE28492c6b810809c"
+    },
+    "polygon": {
+        "sampleFilterNFT":"0x5FbDB2315678afecb367f032d93F642f64180aa3",
+        "mockOperator": ""
+    }
+}
