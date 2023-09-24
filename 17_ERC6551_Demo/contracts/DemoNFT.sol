@@ -4,7 +4,6 @@ pragma solidity ^0.8.17;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "lib/erc6551/src/ERC6551Registry.sol";
 import "hardhat/console.sol";
 
 contract DemoNFT is ERC721, Ownable {
@@ -13,8 +12,9 @@ contract DemoNFT is ERC721, Ownable {
     string public defaultURI = "ipfs://QmXsMLpKjznF3z1KsVm5tNs3E94vj4BFAyAHvD5RTWgQ1J";
     string private baseURI;
     uint256 public totalSupply;
+    uint256 public price = 0.07 ether;
 
-    event Minted(address indexed to);
+    event Minted(address sender, address to);
 
     constructor(string memory _name, string memory _symbol) ERC721(_name, _symbol) {
     }
@@ -24,9 +24,15 @@ contract DemoNFT is ERC721, Ownable {
         return bytes(baseURI).length > 0 ? string(abi.encodePacked(baseURI, tokenId.toString(),".json")) : defaultURI;
     }
 
-    function mint() public {
+    function mint(address _to) public {
+        _safeMint(_to, totalSupply++);
+        emit Minted(msg.sender, _to);
+    }
+
+    function mint2() public payable {
+        require(price == msg.value, "Incorrect Funds Sent" );
         _safeMint(msg.sender, totalSupply++);
-        emit Minted(msg.sender);
+        emit Minted(msg.sender, msg.sender);
     }
 
 }
