@@ -5,8 +5,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 //const PRIVATE_KEY = process.env.PRIVATE_KEY;
-//const PRIVATE_KEY = process.env.WALLET1_PRIVATE_KEY;
-const PRIVATE_KEY = process.env.WALLET2_PRIVATE_KEY;
+const PRIVATE_KEY = process.env.WALLET1_PRIVATE_KEY;
+//const PRIVATE_KEY = process.env.WALLET2_PRIVATE_KEY;
 const ALCHEMY_KEY_MUMBAI = process.env.ALCHEMY_KEY_MUMBAI;
 
 const config: HardhatUserConfig = {
