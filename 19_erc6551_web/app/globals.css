@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.connect-wallet-btn {
+  background-color: #2e60d1;
+  background: linear-gradient( 172deg, rgba(46, 96, 209, 1) 0%, rgba(214, 67, 111, 1) 140% );
+  width: 165px;
+  padding: 0.7rem 2.1rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 0.8;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.connect-wallet-btn:hover {
+  background: linear-gradient( 172deg, rgba(214, 67, 111, 1) 0%,  rgba(46, 96, 209, 1) 140% );
+}
+
+.connect-wallet-btn:active {
+  background: linear-gradient( 172deg, rgba(46, 96, 209, 1) 0%, rgba(214, 67, 111, 1) 140% );
+}
+
+.main-sec {
+  min-height: 100vh;
+  min-width: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+}
+
+.main-sec-lg {
+  margin-top: 90px;
+}
+
+.nft-list-section {
+  width: 100%;
+  min-height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.nft-list-img {
+  width: 150px;
+  cursor: pointer;
+}
