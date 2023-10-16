@@ -1,0 +1,15 @@
+{
+    "localhost": {
+        "demoNFT":""
+    },
+    "mumbai": {
+        "demoNFT":"0xeD5F28d85C75a9052f941C9280bF94f4FBC7027C",
+        "erc6551Registry": "0xB64743670CA5AA4701Df1377F34AA8d7D81Fc445",
+        "myERC6551Account": "0x1B60BaFAA6aB0a47C1A421d3cD232AfE3bAda721",
+        "tba1": "0x55fd32acc6ae3e45b598f580c99dd20c996f973a"
+        
+    },
+    "mainnet": {
+        "demoNFT":""
+    }
+}
