@@ -65,8 +65,14 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
+/*
+.nft-list-img {
+  cursor: pointer;
+}*/
 
 .nft-list-img {
-  width: 150px;
+  width: 200px;
   cursor: pointer;
 }
+
+
