@@ -22,10 +22,11 @@ async function main() {
 
   const tokenboundClient = new TokenboundClient({ signer:owner, chainId: 80001 });  
 
-  console.log(`TBA: ${addresses[network.name].tbaWallet1}`);
+  //console.log(`TBA: ${addresses[network.name].tbaWallet1}`);
 
-  const tokenIdToTransfer = 5; // This token id will be avaiable once you run '09_test-initial-setup'
-  const txt1 = await demoNFT.transferFrom(owner.address, addresses[network.name].wallet2Address,tokenIdToTransfer);
+  const tokenIdToTransfer = 3; // This token id will be avaiable once you run '09_test-initial-setup'
+  //const txt1 = await demoNFT.transferFrom(owner.address, addresses[network.name].wallet2Address,tokenIdToTransfer);
+  const txt1 = await demoNFT.transferFrom(owner.address, "0x12dd2E80cbBb70fF5B048268AE75C3Aec13Dd1bf",tokenIdToTransfer);
   const receipt1 = await txt1.wait();
 
   console.log("Transfer Done");
