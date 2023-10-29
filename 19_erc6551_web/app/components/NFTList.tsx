@@ -6,7 +6,7 @@ import { OwnedNftsResponse } from "alchemy-sdk";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { convertImageURLFromIpfsToHttp } from "../utils/util-functions";
-import { useGetNFTTokenList } from "../utils/alchemy";
+import { getNFTTokenList } from "../utils/alchemy";
 
 function NFTList() {
     const {address, isConnected} = useAccount();
@@ -19,7 +19,7 @@ function NFTList() {
             console.log("address = ",address);
             console.log("isConnected = ",isConnected);
             console.log("chain id = ",chain?.id);
-            updateNftList(await useGetNFTTokenList(CONTRACT_ADDRESS, new String(address).toString(), chain ? chain.id: 0))
+            updateNftList(await getNFTTokenList(CONTRACT_ADDRESS, new String(address).toString(), chain ? chain.id: 0))
         })();
     },[isConnected, address, chain])
 
@@ -28,7 +28,7 @@ function NFTList() {
             <div className="grid grid-cols-4 gap-4 content-center justify-items-center">
                 {nftList && 
                     nftList.ownedNfts.map((a, i)=>{
-                            return <div key={i} className="bg-slate-300 rounded-xl">
+                            return <div key={i} className="bg-slate-300 rounded-xl max-w-[200px]">
                                 
                                 <img className="nft-list-img rounded-t-xl" src={convertImageURLFromIpfsToHttp(a?.rawMetadata?.image)} 
                                                     onClick={()=> {
@@ -43,10 +43,10 @@ function NFTList() {
                                                 />
                                                 */}
                                 <div className="px-2 py-2">
-                                Name: {a.rawMetadata?.name} <br/>
-                                Token Id: {a.tokenId} <br/>
-                                Collection: {a.contract.name} <br/>
-                                Symbol: {a.contract.symbol} <br/>
+                                    <div >Name: {a.rawMetadata?.name} </div>
+                                    <div>Token Id: {a.tokenId}  </div>
+                                    <div>Collection: {a.contract.name}  </div>
+                                    <div>Symbol: {a.contract.symbol}  </div>
                                 </div>
                                 {/*
                                 rawMetadata image: {a.rawMetadata? a.rawMetadata.image:"N/A"} <br/>
