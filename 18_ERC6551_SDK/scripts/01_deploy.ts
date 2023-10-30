@@ -9,7 +9,7 @@ async function main() {
   console.log("add = ", owner.address);
 
   const DemoNFT:DemoNFT__factory = await ethers.getContractFactory("DemoNFT");
-  const demoNFT:DemoNFT = await DemoNFT.deploy("D Diamond", "DDIA");
+  const demoNFT:DemoNFT = await DemoNFT.deploy("DemoNFT", "DNFT22");
   await demoNFT.deployed();
 
   console.log("DemoNFT deployed to:", demoNFT.address);

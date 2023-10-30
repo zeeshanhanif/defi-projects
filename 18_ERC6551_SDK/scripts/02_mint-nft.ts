@@ -13,6 +13,8 @@ async function main() {
   console.log("DemoNFT address:", await demoNFT.address);
 
   const txt1 = await demoNFT.mint(owner.address);
+  //const txt1 = await demoNFT.mint("0xCf5065db6a3BEbd202085A71C53A8C6017cAdE9A");
+  
   const receipt1 = await txt1.wait();
   
   console.log('Mint 1 done = ', receipt1);
