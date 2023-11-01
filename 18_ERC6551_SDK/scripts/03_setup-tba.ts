@@ -9,7 +9,7 @@ async function main() {
 
   const tokenboundClient = new TokenboundClient({ signer:owner, chainId: 80001 });
 
-  //console.log("test = ",tokenboundClient);
+  console.log("test = ",tokenboundClient);
 
   /*
   const tokenBoundAccount = tokenboundClient.getAccount({
@@ -19,12 +19,15 @@ async function main() {
    
   console.log(tokenBoundAccount) //0x1a2...3b4cd
   */
+ 
   const account = await tokenboundClient.createAccount({
     tokenContract: addresses[network.name].demoNFT,
     //tokenContract: "0xC6B0Fc287aBaf25B60bBC60035b1b06dEAF01a5D",
-    tokenId: "0",
+    tokenId: "2",
   })
-   
+
+  console.log(account) //0x1a2...3b4cd
+  
   // Token 0 -- TBA 0
   // Wallet A - holds token 0
   // Wallet A controls TBA 0
@@ -48,7 +51,7 @@ async function main() {
 
  // testing on gorli and optimisum
  
-  console.log(account) //0x1a2...3b4cd
+  
 
 }
 
