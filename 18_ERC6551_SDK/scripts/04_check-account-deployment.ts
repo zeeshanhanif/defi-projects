@@ -12,7 +12,7 @@ async function main() {
   //console.log("test = ",tokenboundClient);
 
   const isAccountDeployed = await tokenboundClient.checkAccountDeployment({
-    accountAddress: addresses[network.name].tbaGeneratedAccount1,
+    accountAddress: addresses[network.name].tbaGeneratedAccount2,
   })
   
   console.log("IS ACCOUNT DEPLOYED?", isAccountDeployed) //...
